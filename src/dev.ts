@@ -1,5 +1,7 @@
-/** @param {NS} ns */
-export async function main(ns) {
+import { NS } from "@ns";
+export async function main(ns: NS): Promise<void> {
+    const targets = ["n00dles","foodnstuff","sigma-cosmetics","joesguns","hong-fang-tea","harakiri-sushi","iron-gym"]
+
     const moneyUnits = 1000000
     const servers = ns.scan()
     ns.tprint(servers)
