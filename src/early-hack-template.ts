@@ -1,8 +1,8 @@
 import { NS } from "@ns";
 export async function main(ns: NS): Promise<void> {
-    // Defines the "target server", which is the server that we're going to hack. 
-    const target = "foodnstuff";
-    const targets = ["n00dles","foodnstuff","sigma-cosmetics","joesguns","hong-fang-tea","harakiri-sushi","iron-gym"]
+    
+    let targets = ["n00dles","foodnstuff","sigma-cosmetics","joesguns","hong-fang-tea","harakiri-sushi","iron-gym"]
+    targets = ["n00dles","foodnstuff","sigma-cosmetics","joesguns","hong-fang-tea","harakiri-sushi"]
 
     // Infinite loop that continously hacks/grows/weakens the target server
     while(true) {
@@ -11,16 +11,12 @@ export async function main(ns: NS): Promise<void> {
         let securityLevel = ns.getServerSecurityLevel(target)
         let moneyThresh = ns.getServerMaxMoney(target);
         let moneyAvailable = ns.getServerMoneyAvailable(target)
-        ns.print(target, ' security: ', securityLevel,  '\t', securityThresh)
-        ns.print(target, ' money: ', moneyAvailable, '\t', moneyThresh)
+
         if (securityLevel > securityThresh) {
-            // If the server's security level is above our threshold, weaken it
             await ns.weaken(target);
         } else if (moneyAvailable < moneyThresh) {
-            // If the server's money is less than our threshold, grow it
             await ns.grow(target);
         } else {
-            // Otherwise, hack it
             await ns.hack(target);
         }
     }
