@@ -1,11 +1,13 @@
 import { NS } from "@ns";
 
+import { getAllServers } from "utils.js";
+
 // Self replicate to other machines
 export async function main(ns: NS): Promise<void> {
     const servers = getAllServers(ns);
     const filename = "early-hack-template.js";
     // analyzeServers(ns, servers);
-    //collectFiles(ns, servers)
+    // collectFiles(ns, servers)
 }
 
 function collectFiles(ns: NS, servers: Set<string>) {
@@ -47,24 +49,4 @@ function analyzeServers(ns: NS, servers: Set<string>) {
         //ns.hackAnalyzeSecurity(1, target)
         //ns.hackAnalyzeThreads
     }
-}
-
-function getAllServers(ns: NS): Set<string> {
-    const visited: Set<string> = new Set();
-    const queue: string[] = [];
-    const start = "home"
-    visited.add(start)
-    queue.push(start)
-
-    while (queue.length > 0) {
-        const currentServer = queue.shift()!;
-        const neighbors = ns.scan(currentServer)
-        for (const neighbor of neighbors) {
-            if (!visited.has(neighbor)) {
-                visited.add(neighbor);
-                queue.push(neighbor);
-            }
-        }
-    }
-    return visited
 }

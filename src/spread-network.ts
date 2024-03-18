@@ -5,7 +5,6 @@ import { NS } from "@ns";
 
 import { gainRootAccess, getAllServers } from "utils.js";
 
-// Self replicate to other machines
 export async function main(ns: NS): Promise<void> {
     const servers = getAllServers(ns);
     copyFileToServers(ns, filename, servers);
