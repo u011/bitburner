@@ -1,6 +1,6 @@
 import { NS } from "@ns";
 
-import { getAllServers } from "utils.js";
+import { getAllServers } from "/scripts/utils.js";
 
 // Self replicate to other machines
 export async function main(ns: NS): Promise<void> {

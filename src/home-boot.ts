@@ -1,13 +1,20 @@
 import { NS } from "@ns";
 
-const reserveRAM = 7
+let doRestart = false;
+
+function parseArgs(ns: NS) {
+    if (ns.args.includes('restart')) {
+        doRestart = true;
+    }
+}
+
+const reserveRAM = 14
 const hostname = "home"
 let hackingScript = "early-hack-template.js"
-// hackingScript = "hack-script-1-all.js"
 
 export async function main(ns: NS): Promise<void> {
-    ns.scp(hackingScript, hostname)
-    //ns.killall(hostname)
+    parseArgs(ns)
+    if (doRestart) { ns.killall(hostname) }
     const freeRam = ns.getServerMaxRam(hostname) - ns.getServerUsedRam(hostname) - reserveRAM
     const scriptRam = ns.getScriptRam(hackingScript)
     const threads = Math.floor(freeRam / scriptRam)

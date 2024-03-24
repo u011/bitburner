@@ -12,10 +12,10 @@ export async function main(ns: NS): Promise<void> {
             threads: threads,
         };
 
-        hack(ns, hostname, options)
+        grow(ns, hostname, options)
     }
 }
 
-function hack(ns: NS, hostname: string, options: BasicHGWOptions) {
-    ns.hack(hostname, options)
+function grow(ns: NS, hostname: string, options: BasicHGWOptions) {
+    ns.grow(hostname, options)
 }

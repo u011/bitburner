@@ -1,6 +1,6 @@
 import { NS } from "@ns";
 
-import { formatNumberLeftAlign } from "utils.js";
+import { formatNumberLeftAlign } from "/scripts/utils.js";
 
 const alignWidth = 15; // Adjust the width as needed
 

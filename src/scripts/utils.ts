@@ -48,6 +48,7 @@ export function getHackableServers(ns: NS): string[] {
         if (ns.getPurchasedServers().includes(server)) return false
         const serverObj = ns.getServer(server)
         if (!serverObj.moneyMax) return false
+        if (!serverObj.hasAdminRights) return false
         return true
     })
 }

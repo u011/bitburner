@@ -12,10 +12,10 @@ export async function main(ns: NS): Promise<void> {
             threads: threads,
         };
 
-        hack(ns, hostname, options)
+        weaken(ns, hostname, options)
     }
 }
 
-function hack(ns: NS, hostname: string, options: BasicHGWOptions) {
-    ns.hack(hostname, options)
+function weaken(ns: NS, hostname: string, options: BasicHGWOptions) {
+    ns.weaken(hostname, options)
 }

@@ -3,8 +3,7 @@ import { NS } from "@ns";
 const reserveRAM = 0
 const hostname = "pserv-0"
 
-let hackingScript = "hack-script-1-all.js"
-hackingScript = "early-hack-template.js"
+let hackingScript = "early-hack-template.js"
 
 export async function main(ns: NS): Promise<void> {
     const servers = ns.getPurchasedServers()
