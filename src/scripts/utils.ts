@@ -18,8 +18,8 @@ export function gainRootAccess(ns: NS, server: string) {
     if (ns.fileExists('sqlinject.exe')) {
         ns.sqlinject(server);
     }
-    if (serverData.openPortCount  
-        && ns.getServerNumPortsRequired(server) <= serverData.openPortCount) {
+    if (serverData.openPortCount !== undefined &&
+        ns.getServerNumPortsRequired(server) <= serverData.openPortCount) {
         ns.nuke(server);
     }
 }

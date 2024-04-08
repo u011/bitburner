@@ -4,10 +4,10 @@ export async function main(ns: NS): Promise<void> {
     let targets = ["n00dles","foodnstuff","sigma-cosmetics","joesguns","hong-fang-tea","harakiri-sushi","iron-gym"]
     targets = ["n00dles","foodnstuff","sigma-cosmetics","joesguns","hong-fang-tea","harakiri-sushi"]
     targets = ["n00dles","foodnstuff","max-hardware","sigma-cosmetics","nectar-net","joesguns","zer0","neo-net","silver-helix","phantasy","hong-fang-tea","harakiri-sushi","iron-gym"]
-    targets = ["n00dles","foodnstuff"]
     targets = ["n00dles","foodnstuff","sigma-cosmetics","joesguns","zer0","neo-net","hong-fang-tea","nectar-net","harakiri-sushi","iron-gym","max-hardware","phantasy"]
     targets = ["n00dles","foodnstuff","sigma-cosmetics","joesguns"]
-
+    targets = ["n00dles"];
+    targets = ["n00dles","foodnstuff","sigma-cosmetics","joesguns","max-hardware","neo-net","hong-fang-tea","harakiri-sushi","nectar-net","phantasy","iron-gym","zer0"];
     while(true) {
         let target = getRandomElement(targets)
         let securityThresh = ns.getServerMinSecurityLevel(target);

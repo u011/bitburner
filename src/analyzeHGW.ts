@@ -64,7 +64,7 @@ function serversHackProfitability(ns: NS) {
     for (let hostname of hostnames) {
         expectedHackReturn(ns, hostname)
     }
-    ns.tprint(hostnames)
+    ns.tprint('targets = ', hostnames)
 }
 
 function expectedHackReturn(ns: NS, hostname: string) {
